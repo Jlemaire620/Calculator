@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 
-
 class Stack
 {
 private:
@@ -10,7 +9,7 @@ private:
 public:
 	bool isEmpty()
 	{
-		return top == 0;
+		return top() == 0;
 	}
 	int top()
 	{
@@ -31,12 +30,36 @@ int main()
 	Stack stack;
 	stack.push(20);
 
-	std::string input;
-	std::cout << "Enter two numbers and an opperator" << std::endl;
-	std::cin >> input;
-
-	if (input == "+")
+	int first;
+	int second;
+	char opp;
+	std::cout << "Enter the first number." << std::endl;
+	std::cin >> first;
+	std::cout << "Enter the second number." << std::endl;
+	std::cin >> second;
+	std::cout << "Enter the opperation." << std::endl;
+	std::cin >> opp;
+	switch (opp)
 	{
-
+	case '+':
+	{
+		std::cout << "Result is: " << first + second << std::endl;
+		break;
 	}
+	case '-':
+	{
+		std::cout << "Result is: " << first - second << std::endl;
+		break;
+	}
+	case '*':
+	{
+		std::cout << "Result is: " << first * second << std::endl;
+		break;
+	}
+	case '/':
+	{
+		std::cout << "Result is: " << first / second << std::endl;
+	}
+	}
+	system("pause");
 }
